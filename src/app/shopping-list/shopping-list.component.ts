@@ -22,4 +22,12 @@ export class ShoppingListComponent {
 
     this.item = '';
   }
+
+  purchasedItem(itemList: ItemList){
+    itemList.purchased = !itemList.purchased;
+  }
+
+  clearList(){
+    this.list = [];
+  }
 }

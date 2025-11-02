@@ -10,6 +10,7 @@
       placeholder="Digite o nome do item"
     />
     <button type="submit">Adicionar</button>
+    <button type="button" (click)="clearList()">Limpar Lista</button>
   </form>
 
   <table>
@@ -25,9 +26,19 @@
       @for(item of list; track item.id){
         <tr>
           <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
           <td>
-            <input type="checkbox"/>
+            <span
+              [class.item-purchased]="item.purchased"
+            >
+              {{ item.name }}
+            </span>
+          </td>
+          <td>
+            <input
+              [checked]="item.purchased"
+              (click)="purchasedItem(item)"
+              type="checkbox"
+            />
           </td>
         </tr>
       } @empty {
