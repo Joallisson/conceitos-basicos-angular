@@ -19,23 +19,23 @@
         <th>Item</th>
         <th></th>
       </tr>
-
-      <tr>
-        <td>1</td>
-        <td>Arroz</td>
-        <td>
-          <input type="checkbox"/>
-        </td>
-      </tr>
-
-      <tr>
-        <td>1</td>
-        <td>Arroz</td>
-        <td>
-          <input type="checkbox"/>
-        </td>
-      </tr>
     </thead>
+
+    <tbody>
+      @for(item of list; track item.id){
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            <input type="checkbox"/>
+          </td>
+        </tr>
+      } @empty {
+        <tr colspan="3">
+          Nenhum item adicionado!
+        </tr>
+      }
+    </tbody>
   </table>
 
 </div>

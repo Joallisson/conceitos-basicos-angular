@@ -21,7 +21,5 @@ export class ShoppingListComponent {
     this.list.push(itemList)
 
     this.item = '';
-
-    console.table(this.list)
   }
 }
